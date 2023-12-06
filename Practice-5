@@ -1,0 +1,13 @@
+// 5-day
+
+// 1. Создайте функцию isPalindrome, которая принимает строку в качестве аргумента и возвращает true,
+если строка является палиндромом (читается одинаково слева направо и справа налево), 
+и false в противном случае. Протестируйте функцию на нескольких строках.
+
+function isPalindrome(str) {
+  let reversed = str.split('').reverse().join('');
+  return str === reversed;
+}
+
+console.log(isPalindrome("radar"));
+console.log(isPalindrome("hello"));
