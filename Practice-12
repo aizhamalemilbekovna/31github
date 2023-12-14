@@ -1,0 +1,13 @@
+/ Создайте объект fruit с ключами name, color и taste. Создайте функцию printFruitInfo, которая принимает объект fruit и выводит информацию о фрукте в консоль. Протестируйте функцию.
+
+let fruit = {
+  name: "Apple",
+  color: "Red",
+  taste: "Sweet"
+};
+
+function printFruitInfo(fruit) {
+  console.log("Name: " + fruit.name + ", Color: " + fruit.color + ", Taste: " + fruit.taste);
+}
+
+printFruitInfo(fruit);
