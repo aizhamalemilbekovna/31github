@@ -64,9 +64,54 @@ function findLCM(a, b) {
   if (a === 0 || b === 0) {
     return 0; 
   }
-
   const gcd = findGCD(a, b);
   return Math.abs(a * b) / gcd;
 }
 
 console.log(findLCM(4, 6));
+
+
+// Сделайте функцию, которая вернет текущий день недели словом.
+
+function getCurrentDayOfWeek() {
+  const currentDate = new Date();
+
+  const currentDayOfWeek = currentDate.getDay();
+
+  const daysOfWeek = [
+    "воскресенье",
+    "понедельник",
+    "вторник",
+    "среда",
+    "четверг",
+    "пятница",
+    "суббота",
+  ];
+
+  return daysOfWeek[currentDayOfWeek];
+}
+
+const currentDay = getCurrentDayOfWeek();
+console.log(`Сегодня ${currentDay}`);
+
+// Сделайте функцию, которая будет возвращать сколько дней осталось до конца текущего месяца.
+
+function daysUntilEndOfMonth() {
+  const currentDate = new Date();
+
+  const currentMonth = currentDate.getMonth();
+
+  const nextMonth = new Date(currentDate);
+  nextMonth.setMonth(currentMonth + 1, 1);
+  nextMonth.setHours(0, 0, 0, 0);
+
+  const millisecondsInDay = 24 * 60 * 60 * 1000;
+  const daysRemaining = Math.floor(
+    (nextMonth - currentDate) / millisecondsInDay
+  );
+
+  return daysRemaining;
+}
+
+const remainingDays = daysUntilEndOfMonth();
+console.log(`До конца текущего месяца осталось ${remainingDays} дней.`);
